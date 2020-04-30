@@ -318,7 +318,7 @@ npm test
 
 ### 1. Implementar módulo de acesso à API do Mercado Livre
 
-Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services.api.js` para acessar a API do Mercado Livre em sua aplicação.
+Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para acessar a API do Mercado Livre em sua aplicação.
 
 Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições.
 
