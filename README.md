@@ -370,9 +370,13 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 ]
 ```
 
-### 1. Criar página de listagem de produtos vazia
+### 2. Criar página de listagem de produtos vazia
 
   A tela básica da plataforma é a tela de **listagem de produtos**, onde quem usa buscará o que quer para adicionar ao carrinho e filtrará suas buscas.
+
+  * Esta página deve ficar no path `/`.
+  * Mostre a mensagem `"Digite algum termo de pesquisa ou escolha uma categoria."`.
+  * Adicione o atributo `data-testid` com o valor `home-initial-message` no elemento da mensagem.
 
 ### 2. Criar página do carrinho de compras
 
