@@ -286,7 +286,35 @@ Se você quiser aprender mais sobre a API do _Mercado Livre_, veja a [documenta�
 
 Aqui encontram-se os requisitos do projeto. Para acessar a descrição completa das demandas, veja o quadro _Kanban_ disponibilizado para o seu grupo na [aba Projects](https://github.com/tryber/sd-0x-block15-project-frontend-online-store/projects) do repositório.
 
-* ⚠ **PULL REQUESTS COM ISSUES NO CODE CLIMATE NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+⚠ **PULL REQUESTS COM ISSUES NO CODE CLIMATE NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
+### Execução de testes unitários
+
+Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários.
+
+Esse _framework_ de testes utiliza algumas marcações no código para verificar a solução proposta, uma dessas marcações é o atributo `data-testid` e faremos uso dele aqui.
+
+Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar claro essa configuração:
+
+Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
+
+```html
+<button data-testid="my-action" ></button>
+```
+
+ou
+
+```html
+<a data-testid="my-action"><a/>
+```
+
+ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e dessa forma, conseguiremos realizar testes unitários focados no comportamento da aplicação.
+
+Afim de verificar a solução proposta, você pode executar todos os testes unitários localmente, basta executar:
+
+```bash
+npm test
+```
 
 ### 1. Implementar módulo de acesso à API do Mercado Livre
 
