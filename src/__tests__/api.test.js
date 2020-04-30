@@ -1,6 +1,6 @@
 import * as api from '../services/api';
 
-describe('Mercado Livre Api functions', () => {
+describe('Implementar módulo de acesso à API do Mercado Livre', () => {
   it('getCategories', () => {
     const successResponseBody = [{
       "id": "MLB5672",
