@@ -387,9 +387,11 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
   * Mostre a mensagem `"Seu carrinho está vazio"` na página de carrinho de compras quando não existirem produtos no carrinho de compras.
   * Adicione o atributo `data-testid` com o valor `shopping-cart-empty-message` no elemento da mensagem.
 
-### 3. Listar as categorias de produtos disponíveis via API na página principal
+### 4. Listar as categorias de produtos disponíveis via API na página principal
 
   Um endpoint da API do Mercado Livre retorna as categorias de produto disponíveis para busca. Em momento posterior tais categorias serão usadas para filtrar a listagem de produtos. Por hora, elas devem ser listadas na tela da listagem, conforme protótipo.
+
+  * Adicione o atributo `data-testid` com o valor `category` nos elementos que possuem os nomes das categorias
 
 ### 4. Buscar por termos e receber uma listagem de produtos, com dados resumidos, associados a esses termos
 
