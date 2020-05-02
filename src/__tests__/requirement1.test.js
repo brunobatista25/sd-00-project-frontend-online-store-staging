@@ -1,20 +1,10 @@
 import * as api from '../services/api';
+import mockedCategoriesResult from '../__mocks__/categories';
 
 describe('Implementar módulo de acesso à API do Mercado Livre', () => {
   it('getCategories', () => {
-    const successResponseBody = [{
-      "id": "MLB5672",
-      "name": "Acessórios para Veículos"
-    }, {
-      "id": "MLB271599",
-      "name": "Agro"
-    }, {
-      "id": "MLB1403",
-      "name": "Alimentos e Bebidas"
-    }];
-
     const mockFetchPromise = Promise.resolve({
-      json: () => Promise.resolve(successResponseBody)
+      json: () => Promise.resolve(mockedCategoriesResult)
     });
 
     jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
@@ -22,7 +12,7 @@ describe('Implementar módulo de acesso à API do Mercado Livre', () => {
     return api.getCategories().then(categories => {
       expect(global.fetch).toHaveBeenCalled();
       expect(global.fetch).toHaveBeenCalledWith('https://api.mercadolibre.com/sites/MLB/categories');
-      expect(categories).toEqual(successResponseBody);
+      expect(categories).toEqual(mockedCategoriesResult);
     });
   });
 
