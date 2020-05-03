@@ -405,9 +405,12 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
   A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
 
-### 6. Clicar na exibição resumida de um produto e ir para uma tela com sua exibição detalhada
+### 7. Clicar na exibição resumida de um produto e ir para uma tela com sua exibição detalhada
 
   A exibição detalhada de um produto será a página para exibir tudo o que se tem acerca de um produto específico.
+
+  * Adicione o atributo `data-testid` com o valor `product-detail-link` no elemento que ao ser clicado, enviará a pessoa que usa a aplicação para a página de detalhes do produto. Você deve adicionar esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `product-detail-name` no elemento que possui o nome do produto na tela de detalhes.
 
 ### 7. Adicionar uma quantidade arbitrária de um produto ao carrinho a partir de sua tela de exibição detalhada
 
