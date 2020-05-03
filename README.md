@@ -401,7 +401,7 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
   * Adicione o atributo `data-testid` com o valor `query-button` no elemento que dispara a chamada para a API com o termo de busca pesquisado.
   * Adicione o atributo `data-testid` com o valor `product` nos elementos que possuem os dados dos produtos.
 
-### 5. Selecionar uma categoria e ver somente produtos daquela categoria
+### 6. Selecionar uma categoria e ver somente produtos daquela categoria
 
   A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
 
@@ -433,10 +433,6 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
   A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
 
-### 13. Navegar por um e-commerce estilizado em CSS
-
-  Uma navegação em _wireframes_ não é uma experiência de uso agradável. Uma vez que nenhum design do produto foi especificado, no entanto, cabe a quem programa estilizar o site.
-
 ### BÔNUS:
 
 ### 1. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
@@ -447,21 +443,9 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
   As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns produtos. Devemos incorporar isso ao e-commerce.
 
-### 3. Ter uma boa experiência de aparelhos mobile
-
-  A maior parte dos acessos a qualquer site hoje em dia vem de dispositivos mobile. Precisamos de um layout responsivo para nos adequarmos a essa demanda. Como o designer não construiu esses protótipos, cabe a quem programa fazê-los.
-
 ### 4. Ordenar os produtos da listagem por preço
 
   Um importante critério para escolha de compra de produtos é o preço. Por isso, precisamos poder organizar a nossa listagem de acordo.
-
-### 5. Ter os dados de compra de quem compra validados antes da compra ser efetuada
-
-  Se os dados de compra de quem usa não são validados automáticamente temos uma quantidade grande de compras estornadas por informações inseridas incorretamente. Não queremos isso.
-
-### 6. Ver com clareza que um produto foi adicionado ou removido do carrinho
-
-  A equipe de produto definiu, em testes de usabilidade, que ter uma animação na página identificando que um produto foi adicionado ou removido do carrinho é positivo na experiência de quem usa.
 
 ### 7. Ver o conteúdo do meu carrinho sem sair da página em que estou
 
