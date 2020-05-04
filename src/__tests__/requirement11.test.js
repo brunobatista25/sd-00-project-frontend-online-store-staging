@@ -13,18 +13,16 @@ api.getProductsFromCategoryAndQuery.mockImplementation(
   () => Promise.resolve(mockedQueryResult)
 );
 
-describe('Adicionar um produto ao carrinho a partir de sua tela de exibição detalhada', () => {
-  it('should add product to shopping cart from product details page', async () => {
+describe('Avaliar e comentar acerca de um produto em sua tela de exibição detalhada', () => {
+  it('evaluate product from product details page', async () => {
+    const evaluationContent = 'Esta é uma avaliação sobre o produto realizada na tela de detalhe.';
     render(<App />);
     await waitFor(() => expect(api.getCategories).toHaveBeenCalled());
     fireEvent.click(screen.getAllByTestId('category')[0]);
     await waitFor(() => expect(api.getProductsFromCategoryAndQuery).toHaveBeenCalled());
     fireEvent.click(screen.getAllByTestId('product-detail-link')[0]);
     await waitFor(() => expect(screen.getByTestId('product-detail-name')).toHaveTextContent(mockedQueryResult.results[0].title));
-    fireEvent.click(screen.getByTestId('product-detail-add-to-cart'));
-    fireEvent.click(screen.getByTestId('shopping-cart-button'));
-    await waitFor(() => expect(screen.getAllByTestId('shopping-cart-product-name')));
-    expect(screen.getAllByTestId('shopping-cart-product-name')[0]).toHaveTextContent(mockedQueryResult.results[0].title);
-    expect(screen.getAllByTestId('shopping-cart-product-quantity')[0]).toHaveTextContent('1');
+    fireEvent.change(screen.getByTestId('product-detail-evaluation'), { target: { value: evaluationContent }});
+    expect(screen.getByTestId('product-detail-evaluation')).toHaveValue(evaluationContent);
   });
 });

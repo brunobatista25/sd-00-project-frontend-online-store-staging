@@ -432,12 +432,16 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
   São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
 
   * Adicione elementos na página do carrinho de compras para aumentar ou diminuir a quantidade de cada produto presente no carrinho.
-  * Adicione o atributo `date-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
-  * Adicione o atributo `date-testid` com o valor `product-decreate-quantity` no elemento que diminui a quantidade de um produto. Adicione esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `product-decreate-quantity` no elemento que diminui a quantidade de um produto. Adicione esse atributo para todos os produtos.
 
-### 8. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
+### 11. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
 
   Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
+
+  * Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
+  * Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
+  * (**Não avaliativo**) Você pode criar um botão que simule a submissão dessa avaliação, na verdade, esse botão precisa realizar nenhuma função específica, pode por exemplo, apenas limpar o campo com o texto da avaliação.
 
 ### 11. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
 
