@@ -441,17 +441,29 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
   * Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
   * Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
-  * (**Não avaliativo**) Você pode criar um botão que simule a submissão dessa avaliação, na verdade, esse botão precisa realizar nenhuma função específica, pode por exemplo, apenas limpar o campo com o texto da avaliação.
+  * (**Não avaliativo**) Você pode criar um botão que simule a submissão dessa avaliação, na verdade, esse botão não precisa realizar nenhuma função específica, pode por exemplo, limpar o campo com o texto da avaliação.
 
-### 11. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
+### 12. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
 
   O último grande passo do fluxo do e-commerce é a finalização da compra por parte de quem usa.
+
+  * Adicione um botão para finalizar a compra. Este botão ao ser clicado, deve enviar os dados referente à lista para uma página de "_checkout_".
+  * Adicione o atributo `data-testid` com o valor `checkout-products` no botão que leva a pessoa à página de "_checkout_".
+  * A página de "_checkout_" deve apresentar a listagem dos produtos e o valor total da compra.
+  * A página de "_checkout_" também deve possuir elementos para que a pessoa insira os dados e finalize a compra.
+  * Elemento "Nome completo" deve possuir o atributo `data-testid` com o valor `checkout-fullname`.
+  * Elemento "Email" deve possuir o atributo `data-testid` com o valor `checkout-email`.
+  * Elemento "CPF" deve possuir o atributo `data-testid` com o valor `checkout-cpf`.
+  * Elemento "Telefone" deve possuir o atributo `data-testid` com o valor `checkout-phone`.
+  * Elemento "CEP" deve possuir o atributo `data-testid` com o valor `checkout-cep`.
+  * Elemento "Endereço" deve possuir o atributo `data-testid` com o valor `checkout-address`.
+  * (**Não avaliativo**) Você pode criar um botão que simule a compra desses produtos, na verdade, esse botão não precisa realizar nenhuma função específica.
+
+### BÔNUS:
 
 ### 12. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
 
   A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
-
-### BÔNUS:
 
 ### 1. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
 
