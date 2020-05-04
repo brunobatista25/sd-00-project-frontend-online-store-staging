@@ -24,7 +24,7 @@ describe('Adicionar uma quantidade arbitrária de um produto ao carrinho a parti
     fireEvent.click(screen.getByTestId('product-detail-add-to-cart'));
     fireEvent.click(screen.getByTestId('shopping-cart-button'));
     await waitFor(() => expect(screen.getAllByTestId('shopping-cart-product-name')));
-    expect(screen.getByTestId('shopping-cart-product-name')).toHaveTextContent(mockedQueryResult.results[0].title);
-    expect(screen.getByTestId('shopping-cart-product-quantity')).toHaveTextContent('1');
+    expect(screen.getAllByTestId('shopping-cart-product-name')[0]).toHaveTextContent(mockedQueryResult.results[0].title);
+    expect(screen.getAllByTestId('shopping-cart-product-quantity')[0]).toHaveTextContent('1');
   });
 });

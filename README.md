@@ -427,13 +427,17 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
   * Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
 
+### 10. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
+
+  São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
+
+  * Adicione elementos na página do carrinho de compras para aumentar ou diminuir a quantidade de cada produto presente no carrinho.
+  * Adicione o atributo `date-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
+  * Adicione o atributo `date-testid` com o valor `product-decreate-quantity` no elemento que diminui a quantidade de um produto. Adicione esse atributo para todos os produtos.
+
 ### 8. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
 
   Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
-
-### 9. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
-
-  São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
 
 ### 11. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
 
