@@ -382,7 +382,7 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
   Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a compra. A listagem de produtos deve ter um ícone de carrinho que, ao ser clicado, leva à página do carrinho. Inicialmente, o carrinho deverá estar vazio.
 
-  * O elemento com o ícone de carrinho de compras deve ficar na página inicial.
+  * O elemento com o ícone de carrinho de compras deve ficar visível na página inicial (listagem de produtos) e também na página de detalhes de um produto (descrita posteriormente)
   * Adicione o atributo `data-testid` com o valor `shopping-cart-button` no elemento com o ícone de carrinho de compras.
   * Mostre a mensagem `"Seu carrinho está vazio"` na página de carrinho de compras quando não existirem produtos no carrinho de compras.
   * Adicione o atributo `data-testid` com o valor `shopping-cart-empty-message` no elemento da mensagem.
@@ -421,9 +421,11 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
   * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
   * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
 
-### 7. Adicionar uma quantidade arbitrária de um produto ao carrinho a partir de sua tela de exibição detalhada
+### 9. Adicionar um produto ao carrinho a partir de sua tela de exibição detalhada
 
   Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
+
+  * Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
 
 ### 8. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
 
