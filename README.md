@@ -412,6 +412,15 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
   * Adicione o atributo `data-testid` com o valor `product-detail-link` no elemento que ao ser clicado, enviará a pessoa que usa a aplicação para a página de detalhes do produto. Você deve adicionar esse atributo para todos os produtos.
   * Adicione o atributo `data-testid` com o valor `product-detail-name` no elemento que possui o nome do produto na tela de detalhes.
 
+### 8. Adicionar produtos a partir da tela de listagem de produtos
+
+  Configure uma forma de adicionar produtos ao carrinho de compras a partir da tela de listagem de produtos.
+
+  * Adicione o atributo `data-testid` com o valor `product-add-to-cart` nos elementos que executam a ação de adicionar os produtos ao carrinho de compras.
+  * Desenvolva algo da forma simples: um elemento adiciona um produto.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+
 ### 7. Adicionar uma quantidade arbitrária de um produto ao carrinho a partir de sua tela de exibição detalhada
 
   Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
@@ -423,10 +432,6 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 ### 9. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
 
   São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
-
-### 10. Adicionar produtos a partir da tela de listagem de produtos
-
-  Múltiplas formas fáceis de adicionar um produto ao carrinho impactam positivamente nas taxas de conversão.
 
 ### 11. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
 
