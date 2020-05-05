@@ -461,9 +461,13 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
 ### BÔNUS:
 
-### 12. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
+### 13. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
 
   A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
+
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-size` no elemento que contém a quantidade de produtos presente na lista.
+  * A quantidade a ser exibida é o número total de itens, ou seja, se a pessoa adiciona o produto1 5 vezes e o produto2 2 vezes, o valor a ser exibido é 7.
+  * Esse elemnento deve ser visível da página de listagem de produtos e da página de detalhes de produto.
 
 ### 1. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
 
