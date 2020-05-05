@@ -39,7 +39,7 @@ module.exports = {
               "city_name": "Guarulhos"
           },
           "shipping": {
-              "free_shipping": false,
+              "free_shipping": true,
               "mode": "me1",
               "tags": [],
               "logistic_type": "default",

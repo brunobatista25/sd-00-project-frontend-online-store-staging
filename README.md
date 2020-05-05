@@ -473,9 +473,12 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 
   Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
 
-### 2. Ver quais produtos tem frete grátis
+### 15. Ver quais produtos tem frete grátis
 
   As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns produtos. Devemos incorporar isso ao e-commerce.
+
+  * Adicione um elemento que mostre essa informação para cada produto que possua frete grátis na tela de listagem.
+  * Adicione o atributo `data-testid` com o valor `free-shipping` em elementos que apresentem essa informação para todos os produtos que possuam frete grátis.
 
 ### 4. Ordenar os produtos da listagem por preço
 
