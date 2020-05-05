@@ -20,7 +20,7 @@ module.exports = {
               "real_estate_agency": false,
               "tags": []
           },
-          "price": 8.83,
+          "price": 80.83,
           "currency_id": "BRL",
           "available_quantity": 500,
           "sold_quantity": 500,
