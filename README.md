@@ -469,7 +469,7 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
   * A quantidade a ser exibida é o número total de itens, ou seja, se a pessoa adiciona o produto1 5 vezes e o produto2 2 vezes, o valor a ser exibido é 7.
   * Esse elemnento deve ser visível da página de listagem de produtos e da página de detalhes de produto.
 
-### 1. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
+### 14. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
 
   Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
 

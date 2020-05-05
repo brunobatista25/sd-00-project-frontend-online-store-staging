@@ -161,7 +161,7 @@ module.exports = {
           },
           "price": 21.3,
           "currency_id": "BRL",
-          "available_quantity": 1,
+          "available_quantity": 3,
           "sold_quantity": 500,
           "buying_mode": "buy_it_now",
           "listing_type_id": "gold_special",
