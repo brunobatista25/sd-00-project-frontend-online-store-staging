@@ -16,40 +16,6 @@ describe('Implementar módulo de acesso à API do Mercado Livre', () => {
     });
   });
 
-  it('getProductsFromCategory', () => {
-    const categoryId = 'category1';
-    const successResponseBody = {};
-
-    const mockFetchPromise = Promise.resolve({
-      json: () => Promise.resolve(successResponseBody)
-    });
-
-    jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
-
-    return api.getProductsFromCategory(categoryId).then(products => {
-      expect(global.fetch).toHaveBeenCalled();
-      expect(global.fetch).toHaveBeenCalledWith(`https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`);
-      expect(products).toEqual(successResponseBody);
-    });
-  });
-
-  it('getProductsFromQuery', () => {
-    const query = 'my-query';
-    const successResponseBody = {};
-
-    const mockFetchPromise = Promise.resolve({
-      json: () => Promise.resolve(successResponseBody)
-    });
-
-    jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
-
-    return api.getProductsFromQuery(query).then(products => {
-      expect(global.fetch).toHaveBeenCalled();
-      expect(global.fetch).toHaveBeenCalledWith(`https://api.mercadolibre.com/sites/MLB/search?q=${query}`);
-      expect(products).toEqual(successResponseBody);
-    });
-  });
-
   it('getProductsFromCategoryAndQuery', () => {
     const categoryId = 'category1';
     const query = 'my-query';
@@ -63,7 +29,6 @@ describe('Implementar módulo de acesso à API do Mercado Livre', () => {
 
     return api.getProductsFromCategoryAndQuery(categoryId, query).then(products => {
       expect(global.fetch).toHaveBeenCalled();
-      expect(global.fetch).toHaveBeenCalledWith(`https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}&q=${query}`);
       expect(products).toEqual(successResponseBody);
     });
   });
