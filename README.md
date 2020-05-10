@@ -472,12 +472,6 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
   * Adicione um elemento que mostre essa informação para cada produto que possua frete grátis na tela de listagem.
   * Adicione o atributo `data-testid` com o valor `free-shipping` em elementos que apresentem essa informação para todos os produtos que possuam frete grátis.
 
-### 16. Ordenar os produtos da listagem por preço
-
-  Um importante critério para escolha de compra de produtos é o preço. Por isso, precisamos poder organizar a nossa listagem de acordo.
-
-  * Adicione o atributo `data-testid` com o valor `product-title` aos títulos dos produtos na tela de listagem.
-
 ---
 
 ## Instruções para entregar seu projeto:
