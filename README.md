@@ -286,26 +286,46 @@ Se você quiser aprender mais sobre a API do _Mercado Livre_, veja a [documenta�
 
 Aqui encontram-se os requisitos do projeto. Para acessar a descrição completa das demandas, veja o quadro _Kanban_ disponibilizado para o seu grupo na [aba Projects](https://github.com/tryber/sd-0x-block15-project-frontend-online-store/projects) do repositório.
 
-* ⚠ **PULL REQUESTS COM ISSUES NO CODE CLIMATE NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+⚠ **PULL REQUESTS COM ISSUES NO CODE CLIMATE NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
+### Execução de testes unitários
+
+Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários.
+
+Esse _framework_ de testes utiliza algumas marcações no código para verificar a solução proposta, uma dessas marcações é o atributo `data-testid` e faremos uso dele aqui.
+
+Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar claro essa configuração:
+
+Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
+
+```html
+<button data-testid="my-action" ></button>
+```
+
+ou
+
+```html
+<a data-testid="my-action"><a/>
+```
+
+ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e dessa forma, conseguiremos realizar testes unitários focados no comportamento da aplicação.
+
+Afim de verificar a solução proposta, você pode executar todos os testes unitários localmente, basta executar:
+
+```bash
+npm test
+```
 
 ### 1. Implementar módulo de acesso à API do Mercado Livre
 
-Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services.api.js` para acessar a API do Mercado Livre em sua aplicação.
+Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para acessar a API do Mercado Livre em sua aplicação.
 
 Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições.
 
-Já deixamos 4 funções a serem implementadas para isso:
+Já deixamos 2 funções a serem implementadas para isso:
 
 ```javascript
 export async function getCategories() {
-  // implement here
-}
-
-export async function getProductsFromCategory(categoryId) {
-  // implement here
-}
-
-export async function getProductsFromQuery(query) {
   // implement here
 }
 
@@ -342,91 +362,115 @@ a variável `categories` deve contém o objeto JSON com as categorias obtidas at
 ]
 ```
 
-### 1. Criar página de listagem de produtos vazia
+### 2. Criar página de listagem de produtos vazia
 
   A tela básica da plataforma é a tela de **listagem de produtos**, onde quem usa buscará o que quer para adicionar ao carrinho e filtrará suas buscas.
 
-### 2. Criar página do carrinho de compras
+  * Esta página deve ficar no path `/`.
+  * Mostre a mensagem `"Digite algum termo de pesquisa ou escolha uma categoria."`.
+  * Adicione o atributo `data-testid` com o valor `home-initial-message` no elemento da mensagem.
+
+### 3. Criar página do carrinho de compras
 
   Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a compra. A listagem de produtos deve ter um ícone de carrinho que, ao ser clicado, leva à página do carrinho. Inicialmente, o carrinho deverá estar vazio.
 
-### 3. Listar as categorias de produtos disponíveis via API na página principal
+  * O elemento com o ícone de carrinho de compras deve ficar visível na página inicial (listagem de produtos) e também na página de detalhes de um produto (descrita posteriormente)
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-button` no elemento com o ícone de carrinho de compras.
+  * Mostre a mensagem `"Seu carrinho está vazio"` na página de carrinho de compras quando não existirem produtos no carrinho de compras.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-empty-message` no elemento da mensagem.
+
+### 4. Listar as categorias de produtos disponíveis via API na página principal
 
   Um endpoint da API do Mercado Livre retorna as categorias de produto disponíveis para busca. Em momento posterior tais categorias serão usadas para filtrar a listagem de produtos. Por hora, elas devem ser listadas na tela da listagem, conforme protótipo.
 
-### 4. Buscar por termos e receber uma listagem de produtos, com dados resumidos, associados a esses termos
+  * Adicione o atributo `data-testid` com o valor `category` nos elementos que possuem os nomes das categorias
 
-  A alma do site é a sua lógica de busca e listagem de produtos. Após digitar seus termos na caixa de busca uma requisição deverá ser feita à API do Mercado Livre, tendo como parâmetros a frase digitada, e tais produtos deverão aparecer na tela numa exibição resumida, conforme protótipo anexo.
+### 5. Buscar por termos e receber uma listagem de produtos, com dados resumidos, associados a esses termos
 
-### 5. Selecionar uma categoria e ver somente produtos daquela categoria
+  A alma do site é a sua lógica de busca e listagem de produtos. Após digitar seus termos na caixa de busca uma requisição deverá ser feita à API do Mercado Livre utilizando a ação de um botão, tendo como parâmetros a frase digitada, e tais produtos deverão aparecer na tela numa exibição resumida, conforme protótipo anexo.
+
+  * Adicione o atributo `data-testid` com o valor `query-input` no elemento `input` que servirá para a pessoa que usa sua aplicação digitar o termo de busca.
+  * Adicione o atributo `data-testid` com o valor `query-button` no elemento que dispara a chamada para a API com o termo de busca pesquisado.
+  * Adicione o atributo `data-testid` com o valor `product` nos elementos que possuem os dados dos produtos.
+
+### 6. Selecionar uma categoria e ver somente produtos daquela categoria
 
   A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
 
-### 6. Clicar na exibição resumida de um produto e ir para uma tela com sua exibição detalhada
+### 7. Clicar na exibição resumida de um produto e ir para uma tela com sua exibição detalhada
 
   A exibição detalhada de um produto será a página para exibir tudo o que se tem acerca de um produto específico.
 
-### 7. Adicionar uma quantidade arbitrária de um produto ao carrinho a partir de sua tela de exibição detalhada
+  * Adicione o atributo `data-testid` com o valor `product-detail-link` no elemento que ao ser clicado, enviará a pessoa que usa a aplicação para a página de detalhes do produto. Você deve adicionar esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `product-detail-name` no elemento que possui o nome do produto na tela de detalhes.
+
+### 8. Adicionar produtos a partir da tela de listagem de produtos
+
+  Configure uma forma de adicionar produtos ao carrinho de compras a partir da tela de listagem de produtos.
+
+  * Adicione o atributo `data-testid` com o valor `product-add-to-cart` nos elementos que executam a ação de adicionar os produtos ao carrinho de compras.
+  * Desenvolva algo da forma simples: um elemento adiciona um produto.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+
+### 9. Adicionar um produto ao carrinho a partir de sua tela de exibição detalhada
 
   Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
 
-### 8. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
+  * Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
 
-  Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
-
-### 9. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
+### 10. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
 
   São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
 
-### 10. Adicionar produtos a partir da tela de listagem de produtos
+  * Adicione elementos na página do carrinho de compras para aumentar ou diminuir a quantidade de cada produto presente no carrinho.
+  * Adicione o atributo `data-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `product-decreate-quantity` no elemento que diminui a quantidade de um produto. Adicione esse atributo para todos os produtos.
 
-  Múltiplas formas fáceis de adicionar um produto ao carrinho impactam positivamente nas taxas de conversão.
+### 11. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
 
-### 11. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
+  Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
+
+  * Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
+  * Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
+  * (**Não avaliativo**) Você pode criar um botão que simule a submissão dessa avaliação, na verdade, esse botão não precisa realizar nenhuma função específica, pode por exemplo, limpar o campo com o texto da avaliação.
+
+### 12. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
 
   O último grande passo do fluxo do e-commerce é a finalização da compra por parte de quem usa.
 
-### 12. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
-
-  A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
-
-### 13. Navegar por um e-commerce estilizado em CSS
-
-  Uma navegação em _wireframes_ não é uma experiência de uso agradável. Uma vez que nenhum design do produto foi especificado, no entanto, cabe a quem programa estilizar o site.
+  * Adicione um botão para finalizar a compra. Este botão ao ser clicado, deve enviar os dados referente à lista para uma página de "_checkout_".
+  * Adicione o atributo `data-testid` com o valor `checkout-products` no botão que leva a pessoa à página de "_checkout_".
+  * A página de "_checkout_" deve apresentar a listagem dos produtos e o valor total da compra.
+  * A página de "_checkout_" também deve possuir elementos para que a pessoa insira os dados e finalize a compra.
+  * Elemento "Nome completo" deve possuir o atributo `data-testid` com o valor `checkout-fullname`.
+  * Elemento "Email" deve possuir o atributo `data-testid` com o valor `checkout-email`.
+  * Elemento "CPF" deve possuir o atributo `data-testid` com o valor `checkout-cpf`.
+  * Elemento "Telefone" deve possuir o atributo `data-testid` com o valor `checkout-phone`.
+  * Elemento "CEP" deve possuir o atributo `data-testid` com o valor `checkout-cep`.
+  * Elemento "Endereço" deve possuir o atributo `data-testid` com o valor `checkout-address`.
+  * (**Não avaliativo**) Você pode criar um botão que simule a compra desses produtos, na verdade, esse botão não precisa realizar nenhuma função específica.
 
 ### BÔNUS:
 
-### 1. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
+### 13. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
+
+  A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
+
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-size` no elemento que contém a quantidade de produtos presente na lista.
+  * A quantidade a ser exibida é o número total de itens, ou seja, se a pessoa adiciona o produto1 5 vezes e o produto2 2 vezes, o valor a ser exibido é 7.
+  * Esse elemnento deve ser visível da página de listagem de produtos e da página de detalhes de produto.
+
+### 14. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
 
   Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
 
-### 2. Ver quais produtos tem frete grátis
+### 15. Ver quais produtos tem frete grátis
 
   As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns produtos. Devemos incorporar isso ao e-commerce.
 
-### 3. Ter uma boa experiência de aparelhos mobile
-
-  A maior parte dos acessos a qualquer site hoje em dia vem de dispositivos mobile. Precisamos de um layout responsivo para nos adequarmos a essa demanda. Como o designer não construiu esses protótipos, cabe a quem programa fazê-los.
-
-### 4. Ordenar os produtos da listagem por preço
-
-  Um importante critério para escolha de compra de produtos é o preço. Por isso, precisamos poder organizar a nossa listagem de acordo.
-
-### 5. Ter os dados de compra de quem compra validados antes da compra ser efetuada
-
-  Se os dados de compra de quem usa não são validados automáticamente temos uma quantidade grande de compras estornadas por informações inseridas incorretamente. Não queremos isso.
-
-### 6. Ver com clareza que um produto foi adicionado ou removido do carrinho
-
-  A equipe de produto definiu, em testes de usabilidade, que ter uma animação na página identificando que um produto foi adicionado ou removido do carrinho é positivo na experiência de quem usa.
-
-### 7. Ver o conteúdo do meu carrinho sem sair da página em que estou
-
-  Verificar o conteúdo do carrinho e sair o tempo todo prejudica a experiência de navegação de quem usa no e-commerce.
-
-### 8. Identificar na listagem de produtos os que eu já adicionei ao carrinho
-
-  A listagem de produtos pode ficar muito grande e confusa. Identificar quais produtos já foram adicionados ao carrinho é um diferencial positivo para a experiência de quem usa.
+  * Adicione um elemento que mostre essa informação para cada produto que possua frete grátis na tela de listagem.
+  * Adicione o atributo `data-testid` com o valor `free-shipping` em elementos que apresentem essa informação para todos os produtos que possuam frete grátis.
 
 ---
 
