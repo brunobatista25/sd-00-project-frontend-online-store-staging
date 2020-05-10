@@ -33,7 +33,7 @@ exclude_patterns:
 - "**/*.test.js"
 - "src/serviceWorker.js"
 - "src/index.css"
-- "wireframes"
+- src/__tests__/
 plugins:
   csslint:
     enabled: true
