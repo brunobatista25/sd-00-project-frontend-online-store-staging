@@ -322,7 +322,7 @@ Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para 
 
 Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições.
 
-Já deixamos 4 funções a serem implementadas para isso:
+Já deixamos 2 funções a serem implementadas para isso:
 
 ```javascript
 export async function getCategories() {
