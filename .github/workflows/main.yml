@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/checkout@v2
         if: steps.wait-for-build.outputs.conclusion == 'success'
-      - name: Jest evaluator step
+      - name: Evaluator step
         id: test
         uses: betrybe/react-scripts-evaluator-action@v3
         if: steps.wait-for-build.outputs.conclusion == 'success'
