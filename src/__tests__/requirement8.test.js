@@ -7,10 +7,10 @@ import mockedQueryResult from '../__mocks__/query';
 
 jest.mock('../services/api');
 api.getCategories.mockImplementation(
-  () => Promise.resolve(mockedCategoriesResult)
+  () => Promise.resolve(mockedCategoriesResult),
 );
 api.getProductsFromCategoryAndQuery.mockImplementation(
-  () => Promise.resolve(mockedQueryResult)
+  () => Promise.resolve(mockedQueryResult),
 );
 
 describe('Adicionar produtos a partir da tela de listagem de produtos', () => {
@@ -22,7 +22,9 @@ describe('Adicionar produtos a partir da tela de listagem de produtos', () => {
     fireEvent.click(screen.getAllByTestId('product-add-to-cart')[0]);
     fireEvent.click(screen.getByTestId('shopping-cart-button'));
     await waitFor(() => expect(screen.getAllByTestId('shopping-cart-product-name')));
-    expect(screen.getByTestId('shopping-cart-product-name')).toHaveTextContent(mockedQueryResult.results[0].title);
+    expect(screen.getByTestId('shopping-cart-product-name')).toHaveTextContent(
+      mockedQueryResult.results[0].title,
+    );
     expect(screen.getByTestId('shopping-cart-product-quantity')).toHaveTextContent('1');
   });
 });

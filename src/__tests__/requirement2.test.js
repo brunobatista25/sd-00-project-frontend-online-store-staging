@@ -9,6 +9,8 @@ describe('Criar página de listagem de produtos vazia', () => {
 
   it('should have a message', () => {
     render(<App />);
-    expect(screen.getByTestId('home-initial-message')).toHaveTextContent('Digite algum termo de pesquisa ou escolha uma categoria.')
+    expect(screen.getByTestId('home-initial-message')).toHaveTextContent(
+      'Digite algum termo de pesquisa ou escolha uma categoria.',
+    );
   });
 });

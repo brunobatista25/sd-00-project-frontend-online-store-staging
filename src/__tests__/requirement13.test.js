@@ -7,13 +7,14 @@ import mockedQueryResult from '../__mocks__/query';
 
 jest.mock('../services/api');
 api.getCategories.mockImplementation(
-  () => Promise.resolve(mockedCategoriesResult)
+  () => Promise.resolve(mockedCategoriesResult),
 );
 api.getProductsFromCategoryAndQuery.mockImplementation(
-  () => Promise.resolve(mockedQueryResult)
+  () => Promise.resolve(mockedQueryResult),
 );
 
-describe('Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece', () => {
+describe(`Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas
+          as telas em que ele aparece`, () => {
   it('should see the size of shopping cart from product list page', async () => {
     render(<App />);
     await waitFor(() => expect(api.getCategories).toHaveBeenCalled());

@@ -4,5 +4,6 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
 
-import MutationObserver from '@sheerun/mutationobserver-shim'
-window.MutationObserver = MutationObserver
+import MutationObserver from '@sheerun/mutationobserver-shim';
+
+window.MutationObserver = MutationObserver;
