@@ -12,7 +12,8 @@ describe('Criar página do carrinho de compras', () => {
     render(<App />);
     fireEvent.click(screen.getByTestId('shopping-cart-button'));
     await waitFor(() => screen.getByTestId('shopping-cart-empty-message'));
-    expect(screen.getByTestId('shopping-cart-empty-message')).toHaveTextContent('Seu carrinho está vazio')
+    expect(screen.getByTestId('shopping-cart-empty-message')).toHaveTextContent(
+      'Seu carrinho está vazio',
+    );
   });
 });
-
