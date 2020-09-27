@@ -1,3 +1,4 @@
-Adicionar lista de produtos ao carrinho, com valor total ao final. Criar botões (-) e (+) para cada produto do carrinho, permitindo alterar a quantidade desejada de cada produto. A quantidade não pode ser negativa. Criar também botão (X) para remover produtos do carrinho e botão para finalizar a compra.
+Adicionar formulário ao produto, em sua exibição detalhada, para permitir adicionar avaliações com nota de 1 a 5 estrelas e comentários (o comentário deve ser opcional, sendo possível enviar apenas a nota). Exibir a lista de avaliações já feitas. Se quem usa sai e volta da tela, a nota e as avaliações não devem ser apagadas.
 
-- [Card 10](https://github.com/my-org/my-repo/tree/master/wireframes/card_10.png)
+- [Card 11.1](https://github.com/my-org/my-repo/tree/master/wireframes/card_11.1.png)
+- [Card 11.2](https://github.com/my-org/my-repo/tree/master/wireframes/card_11.2.png)
