@@ -238,6 +238,10 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
 
 #### 2. Criar página de listagem de produtos vazia
 
+**PRIORIDADE 0** - Criar o campo de busca da tela principal, a listagem de produtos, inicialmente vazia. A listagem vazia deve conter a mensagem "Digite algum termo de pesquisa ou escolha uma categoria" (veja os detalhes do card).
+
+**Observações técnicas**
+
 A tela básica da plataforma é a tela de **listagem de produtos**, onde quem usa buscará o que quer para adicionar ao carrinho e filtrará suas buscas.
 
   * Esta página deve ficar no path `/`, renderizável a partir do acesso ao componente `<App />`.
