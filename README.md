@@ -238,7 +238,7 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
 
 #### 2. Criar página de listagem de produtos vazia
 
-  A tela básica da plataforma é a tela de **listagem de produtos**, onde quem usa buscará o que quer para adicionar ao carrinho e filtrará suas buscas.
+A tela básica da plataforma é a tela de **listagem de produtos**, onde quem usa buscará o que quer para adicionar ao carrinho e filtrará suas buscas.
 
   * Esta página deve ficar no path `/`, renderizável a partir do acesso ao componente `<App />`.
   * Mostre a mensagem `"Digite algum termo de pesquisa ou escolha uma categoria."`.
@@ -251,30 +251,47 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
 
 #### 3. Criar página do carrinho de compras
 
-  Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a compra. A listagem de produtos deve ter um ícone de carrinho que, ao ser clicado, leva à página do carrinho. Inicialmente, o carrinho deverá estar vazio.
+Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a compra. A listagem de produtos deve ter um ícone de carrinho que, ao ser clicado, leva à página do carrinho. Inicialmente, o carrinho deverá estar vazio.
 
   * O elemento com o ícone de carrinho de compras deve ficar visível na página inicial (listagem de produtos) e também na página de detalhes de um produto (descrita posteriormente)
   * Adicione o atributo `data-testid` com o valor `shopping-cart-button` no elemento com o ícone de carrinho de compras.
   * Mostre a mensagem `"Seu carrinho está vazio"` na página de carrinho de compras quando não existirem produtos no carrinho de compras.
   * Adicione o atributo `data-testid` com o valor `shopping-cart-empty-message` no elemento da mensagem.
 
+**O que será avaliado:**
+
+  * A home deve ter o botão do carrinho de compras
+  * Clicar no botão deve levar à página do carrinho vazio, com a mensagem 'Seu carrinho está vazio' nela
+
 #### 4. Listar as categorias de produtos disponíveis via API na página principal
 
-  Um endpoint da API do Mercado Livre retorna as categorias de produto disponíveis para busca. Em momento posterior tais categorias serão usadas para filtrar a listagem de produtos. Por hora, elas devem ser listadas na tela da listagem, conforme protótipo.
+Um endpoint da API do Mercado Livre retorna as categorias de produto disponíveis para busca. Em momento posterior tais categorias serão usadas para filtrar a listagem de produtos. Por hora, elas devem ser listadas na tela da listagem, conforme protótipo.
 
   * Adicione o atributo `data-testid` com o valor `category` nos elementos que possuem os nomes das categorias
 
+**O que será avaliado:**
+
+  * Exibe as categorias retornadas pela API na página de listagem de produtos
+
 #### 5. Buscar por termos e receber uma listagem de produtos, com dados resumidos, associados a esses termos
 
-  A alma do site é a sua lógica de busca e listagem de produtos. Após digitar seus termos na caixa de busca uma requisição deverá ser feita à API do Mercado Livre utilizando a ação de um botão, tendo como parâmetros a frase digitada, e tais produtos deverão aparecer na tela numa exibição resumida, conforme protótipo anexo.
+A alma do site é a sua lógica de busca e listagem de produtos. Após digitar seus termos na caixa de busca uma requisição deverá ser feita à API do Mercado Livre utilizando a ação de um botão, tendo como parâmetros a frase digitada, e tais produtos deverão aparecer na tela numa exibição resumida, conforme protótipo anexo.
 
   * Adicione o atributo `data-testid` com o valor `query-input` no elemento `input` que servirá para a pessoa que usa sua aplicação digitar o termo de busca.
   * Adicione o atributo `data-testid` com o valor `query-button` no elemento que dispara a chamada para a API com o termo de busca pesquisado.
   * Adicione o atributo `data-testid` com o valor `product` nos elementos que possuem os dados dos produtos.
 
+**O que será avaliado:**
+
+  * Exibe todos os produtos retornados pela API, dado um determinado filtro
+
 #### 6. Selecionar uma categoria e ver somente produtos daquela categoria
 
   A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
+
+**O que será avaliado:**
+
+  * Filtra corretamente os produtos de uma página para exibir somente os daquela categoria
 
 #### 7. Clicar na exibição resumida de um produto e ir para uma tela com sua exibição detalhada
 
@@ -282,6 +299,10 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
 
   * Adicione o atributo `data-testid` com o valor `product-detail-link` no elemento que ao ser clicado, enviará a pessoa que usa a aplicação para a página de detalhes do produto. Você deve adicionar esse atributo para todos os produtos.
   * Adicione o atributo `data-testid` com o valor `product-detail-name` no elemento que possui o nome do produto na tela de detalhes.
+
+**O que será avaliado:**
+
+  * Clicar no card produto leva à página com seus detalhes
 
 #### 8. Adicionar produtos a partir da tela de listagem de produtos
 
@@ -292,11 +313,19 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
   * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
   * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
 
+**O que será avaliado:**
+
+  * Adiciona da tela de listagem um produto que aparece no carrinho
+
 #### 9. Adicionar um produto ao carrinho a partir de sua tela de exibição detalhada
 
   Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
 
   * Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
+
+**O que será avaliado:**
+
+  * Adiciona um produto ao carrinho da sua tela de detalhes
 
 #### 10. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
 
@@ -306,6 +335,10 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
   * Adicione o atributo `data-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
   * Adicione o atributo `data-testid` com o valor `product-decreate-quantity` no elemento que diminui a quantidade de um produto. Adicione esse atributo para todos os produtos.
 
+**O que será avaliado:**
+
+  * Adiciona produtos ao carrinho e manipula suas quantidades
+
 #### 11. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
 
   Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
@@ -313,6 +346,10 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
   * Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
   * Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
   * (**Não avaliativo**) Você pode criar um botão que simule a submissão dessa avaliação, na verdade, esse botão não precisa realizar nenhuma função específica, pode por exemplo, limpar o campo com o texto da avaliação.
+
+**O que será avaliado:**
+
+  * Avalia e comenta um produto na sua tela de detalhes
 
 #### 12. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
 
@@ -330,6 +367,10 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
   * Elemento "Endereço" deve possuir o atributo `data-testid` com o valor `checkout-address`.
   * (**Não avaliativo**) Você pode criar um botão que simule a compra desses produtos, na verdade, esse botão não precisa realizar nenhuma função específica.
 
+**O que será avaliado:**
+
+  * Faz os passos da compra com sucesso: recupera produtos de uma categoria; adiciona-os ao carrinho; faz o checkout; insere todos os dados
+
 ### BÔNUS:
 
 #### 13. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
@@ -340,9 +381,18 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
   * A quantidade a ser exibida é o número total de itens, ou seja, se a pessoa adiciona o produto1 5 vezes e o produto2 2 vezes, o valor a ser exibido é 7.
   * Esse elemnento deve ser visível da página de listagem de produtos e da página de detalhes de produto.
 
+**O que será avaliado:**
+
+  * Vê a quantidade de produtos no carrinho da tela de listagem
+  * Vê a quantidade de produtos no carrinho da tela de detalhes
+
 #### 14. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
 
   Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
+
+**O que será avaliado:**
+
+  * Não adiciona ao carrinho mais produtos do que o disponível em estoque
 
 #### 15. Ver quais produtos tem frete grátis
 
@@ -350,6 +400,10 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
 
   * Adicione um elemento que mostre essa informação para cada produto que possua frete grátis na tela de listagem.
   * Adicione o atributo `data-testid` com o valor `free-shipping` em elementos que apresentem essa informação para todos os produtos que possuam frete grátis.
+
+**O que será avaliado:**
+
+  * Exibe corretmente a informação de frete grátis dos produtos
 
 ---
 

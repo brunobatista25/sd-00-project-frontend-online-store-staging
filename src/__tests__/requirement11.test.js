@@ -15,7 +15,7 @@ api.getProductsFromCategoryAndQuery.mockImplementation(
 
 describe(`Avaliar e comentar acerca de um produto em sua tela de exibição
           detalhada`, () => {
-  it('evaluate product from product details page', async () => {
+  it('Avalia e comenta um produto na sua tela de detalhes', async () => {
     const evaluationContent = `Esta é uma avaliação sobre o produto realizada na
                            tela de detalhe.`;
     render(<App />);
