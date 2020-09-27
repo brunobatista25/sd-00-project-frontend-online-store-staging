@@ -4,7 +4,7 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
-## O que deverá ser desenvolvido
+## O QUE DEVERÁ SER DESENVOLVIDO
 
 Neste projeto você criará uma versão simplificada, sem persistência no banco de dados, de uma **loja online**, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas em um quadro _Kanban_, em um cenário mais próximo ao do mercado de trabalho. A partir dessas demandas, teremos uma aplicação onde os usuários poderão:
   - Buscar produtos por termos e categorias a partir da _API do Mercado Livre_;
@@ -12,7 +12,7 @@ Neste projeto você criará uma versão simplificada, sem persistência no banco
   - Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações;
   - E por fim, finalizar a compra (simulada) dos itens selecionados.
 
-## Como desenvolver
+## COMO DESENVOLVER
 
 Este repositório **já conta com uma `main-branch` para cada grupo**, identificada como `main-branch-1` para o grupo 1, `main-branch-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
 
@@ -76,9 +76,9 @@ Este repositório **já conta com uma `main-branch` para cada grupo**, identific
 
 7. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Linter_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
 
-## Requisitos do projeto
+## REQUISITOS DO PROJETO
 
-Para o bom andamento deste projeto disponibilizamos, além do README a seguir, um _quadro Kanban_ com as demandas a realizar para o projeto ser concluído com sucesso. É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará.
+Para o bom andamento deste projeto disponibilizamos, além do README a seguir, um _quadro Kanban_ com as demandas a realizar para o projeto ser concluído com sucesso. Confira o _Slack_ para saber como acessar o quadro! É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará.
 
 Além disso, você verá que os requisitos do projeto tem, além das observações técnicas e do que será validado, descrições tais quais se veriam em um projeto real. É **muito importante** ser capaz de ler descrições como essa e transformá-las em produtos ou, se houver dúvida, **saber tirar tais dúvidas!** Seguimos à disposição no Slack para isso.
 
@@ -98,9 +98,9 @@ npm run lint
 
 Os requisitos são organizados por grupos de prioridade. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
 
-**Requisito 1:** Prioride 0 (Deve ser feito PRIMEIRO)
-**Requisitos 2 a 4:** Prioride 1 (Devem ser feitos APÓS O REQUISITO 1, mas podem ser feitos em paralelo)
-**Requisitos 5 e 6:** Prioride 2 (Devem ser feitos APÓS OS REQUISITO 2 A 5, mas podem ser feitos em paralelo)
+- **Requisito 1:** Prioride 0 (Deve ser feito PRIMEIRO)
+- **Requisitos 2 a 4:** Prioride 1 (Devem ser feitos APÓS O REQUISITO 1, mas podem ser feitos em paralelo)
+- **Requisitos 5 e 6:** Prioride 2 (Devem ser feitos APÓS OS REQUISITO 2 A 5, mas podem ser feitos em paralelo)
 ...
 
 Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, necessáriamente, do avanço de outra para poder acontecer.
@@ -188,7 +188,7 @@ O retorno desse endpoint será algo no formato:
 
 O retorno desse endpoint será algo como o exemplo que temos [neste arquivo](exemplo-motorola.json).
 
-### Lista de requisitos
+### LISTA DE REQUISITOS
 
 #### 1. Implementar módulo de acesso à API do Mercado Livre
 
