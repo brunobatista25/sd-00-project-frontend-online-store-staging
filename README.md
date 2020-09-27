@@ -76,55 +76,6 @@ Este repositório **já conta com uma `main-branch` para cada grupo**, identific
 
 7. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Linter_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
 
-## Documentação da API do Mercado Livre
-
-Sua página _web_ irá consumir os dados da API do _Mercado Livre_ para realizar a busca de itens da sua loja online. Para realizar essas buscas, vocês precisarão consultar os seguintes _endpoints_:
-
-- Para listar as categorias disponíveis:
-  - Tipo da requisição: `GET`
-  - Endpoint: https://api.mercadolibre.com/sites/MLB/categories
-- Para buscar por itens por termo:
-  - Tipo da requisição: `GET`
-  - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
-  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?q=$QUERY
-- Para buscar itens por categoria:
-  - Tipo da requisição: `GET`
-  - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
-  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID
-- Para buscar itens de uma categoria por termo:
-  - Tipo da requisição: `GET`
-  - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
-  - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
-  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID&q=$QUERY
-
-Se você quiser aprender mais sobre a API do _Mercado Livre_, veja a [documentação](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas).
-
-### Exemplo de requisição para listar categorias
-
-```
-"https://api.mercadolibre.com/sites/MLB/categories"
-```
-
-O retorno desse endpoint será algo no formato:
-
-```json
-[
-    {
-        "id": "MLB5672",
-        "name": "Acessórios para Veículos"
-    },
-    ...
-]
-```
-
-### Exemplo de requisição de busca
-
-```
-"https://api.mercadolibre.com/sites/MLB/search?category=MLB1055&q=Motorola"
-```
-
-O retorno desse endpoint será algo como o exemplo que temos [neste arquivo](exemplo-motorola.json).
-
 ## Requisitos do projeto
 
 Para o bom andamento deste projeto disponibilizamos, além do README a seguir, um _quadro Kanban_ com as demandas a realizar para o projeto ser concluído com sucesso. É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará.
@@ -187,6 +138,57 @@ Você pode executar os testes para um único requisito passando, como parâmetro
 ```bash
 npm test src/__tests__/requirement1.test.js
 ```
+
+### Documentação da API do Mercado Livre
+
+Sua página _web_ irá consumir os dados da API do _Mercado Livre_ para realizar a busca de itens da sua loja online. Para realizar essas buscas, vocês precisarão consultar os seguintes _endpoints_:
+
+- Para listar as categorias disponíveis:
+  - Tipo da requisição: `GET`
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/categories
+- Para buscar por itens por termo:
+  - Tipo da requisição: `GET`
+  - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?q=$QUERY
+- Para buscar itens por categoria:
+  - Tipo da requisição: `GET`
+  - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID
+- Para buscar itens de uma categoria por termo:
+  - Tipo da requisição: `GET`
+  - Parâmetro de busca $QUERY (este parâmetro deve ser substituído pelo valor do campo de busca)
+  - Parâmetro de busca $CATEGORY_ID (este parâmetro deve ser substituído pelo ID da categoria selecionada)
+  - Endpoint: https://api.mercadolibre.com/sites/MLB/search?category=$CATEGORY_ID&q=$QUERY
+
+Se você quiser aprender mais sobre a API do _Mercado Livre_, veja a [documentação](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas).
+
+#### Exemplo de requisição para listar categorias
+
+```
+"https://api.mercadolibre.com/sites/MLB/categories"
+```
+
+O retorno desse endpoint será algo no formato:
+
+```json
+[
+    {
+        "id": "MLB5672",
+        "name": "Acessórios para Veículos"
+    },
+    ...
+]
+```
+
+#### Exemplo de requisição de busca
+
+```
+"https://api.mercadolibre.com/sites/MLB/search?category=MLB1055&q=Motorola"
+```
+
+O retorno desse endpoint será algo como o exemplo que temos [neste arquivo](exemplo-motorola.json).
+
+### Lista de requisitos
 
 #### 1. Implementar módulo de acesso à API do Mercado Livre
 
