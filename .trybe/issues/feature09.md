@@ -1,5 +1,7 @@
 PRIORIDADE 3 - Na tela de listagem de produtos, permitir adicionar o produto ao carrinho (veja os detalhes no card).
 
+- [Tela principal - Adicionar ao carrinho na exibição detalhada](https://github.com/my-org/my-repo/tree/master/wireframes/card_13.png)
+
 **Observações técnicas**
 
 **Requisito 9.** Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.

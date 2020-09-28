@@ -82,8 +82,6 @@ Para o bom andamento deste projeto disponibilizamos, além do README a seguir, u
 
 Além disso, você verá que os requisitos do projeto tem, além das observações técnicas e do que será validado, descrições tais quais se veriam em um projeto real. É **muito importante** ser capaz de ler descrições como essa e transformá-las em produtos ou, se houver dúvida, **saber tirar tais dúvidas!** Seguimos à disposição no Slack para isso.
 
-⚠ **ATENÇÃO! PARA O FUNCIONAMENTO CORRETO DO AVALIADOR, É OBRIGATÓRIO QUE TODOS OS SEUS ARQUIVOS TENHAM A EXTENSÃO `.js`** ⚠
-
 ### Linter
 
 Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
@@ -366,7 +364,7 @@ Configure uma forma de adicionar produtos ao carrinho de compras a partir da tel
 
 **PRIORIDADE 3** - Na tela de listagem de produtos, permitir adicionar o produto ao carrinho (veja os detalhes no card).
 
-- [Tela principal - Adicionar ao carrinho na exibição detalhad](https://github.com/my-org/my-repo/tree/master/wireframes/card_13.png)
+- [Tela principal - Adicionar ao carrinho na exibição detalhada](https://github.com/my-org/my-repo/tree/master/wireframes/card_13.png)
 
 **Observações técnicas**
 
@@ -491,7 +489,7 @@ As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns pro
 
 **O que será avaliado:**
 
-  * Exibe corretmente a informação de frete grátis dos produtos
+  * Exibe corretamente a informação de frete grátis dos produtos
 
 ### EXTRAS (NÃO AVALIATIVOS):
 
