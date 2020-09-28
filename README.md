@@ -14,10 +14,10 @@ Neste projeto você criará uma versão simplificada, sem persistência no banco
 
 ## COMO DESENVOLVER
 
-Este repositório **já conta com uma `main-branch` para cada grupo**, identificada como `main-branch-1` para o grupo 1, `main-branch-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
+Este repositório **já conta com uma `main-group` para cada grupo**, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
 
-* **Criar sua branch de desenvolvimento a partir da sua branch main**. Para isso, clone este repositório, faça o `git checkout main-branch-XX && git pull` e em seguida o `git checkout -b main-branch-XX-minha-feature`.
-* Para criar uma Pull Request para fazer **Code Review**, entitule-a `[GRUPO XX] Meu título` e **sempre aponte a Pull Request da sua branch para a branch `main-branch-XX` do seu grupo, como no exemplo abaixo:**
+* **Criar sua branch de desenvolvimento a partir da sua branch main**. Para isso, clone este repositório, faça o `git checkout main-group-XX && git pull` e em seguida o `git checkout -b main-group-XX-minha-feature`.
+* Para criar uma Pull Request para fazer **Code Review**, entitule-a `[GRUPO XX] Meu título` e **sempre aponte a Pull Request da sua branch para a branch `main-group-XX` do seu grupo, como no exemplo abaixo:**
 
 ![Exemplo de como apontar uma Pull Request para a branch main do grupo](pull-request-para-branch-do-grupo.png)
 
@@ -31,7 +31,7 @@ Este repositório **já conta com uma `main-branch` para cada grupo**, identific
   * `git clone git@github.com:tryber/sd-0x-project-frontend-online-store.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-0x-project-frontend-online-store`
-  * Vá para a branch do seu grupo, com `git checkout main-branch-XX && git pull`, onde `XX` é o número do seu grupo. Exemplos: `main-branch-1`, `main-branch-22`.
+  * Vá para a branch do seu grupo, com `git checkout main-group-XX && git pull`, onde `XX` é o número do seu grupo. Exemplos: `main-group-1`, `main-group-22`.
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -39,14 +39,14 @@ Este repositório **já conta com uma `main-branch` para cada grupo**, identific
   * Inicialize o projeto:
     * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
 
-3. Faça alterações separadas por novas branchs criadas a partir da branch `main-branch-XX`, criando uma nova branch para cada demanda
-  * Verifique que você está na branch `main-branch-XX`
+3. Faça alterações separadas por novas branchs criadas a partir da branch `main-group-XX`, criando uma nova branch para cada demanda
+  * Verifique que você está na branch `main-group-XX`
     * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `main-branch-XX`
-    * Exemplo: `git checkout main-branch-XX && git pull`
+  * Se não estiver, mude para a branch `main-group-XX`
+    * Exemplo: `git checkout main-group-XX && git pull`
   * Agora, crie uma branch para a demanda que você vai desenvolver do seu projeto
     * Você deve criar uma branch com uma breve descrição da demanda a ser desenvolvida
-    * Exemplo: `git checkout -b main-branch-XX-cria-campo-de-busca`
+    * Exemplo: `git checkout -b main-group-XX-cria-campo-de-busca`
 
 4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
@@ -61,12 +61,12 @@ Este repositório **já conta com uma `main-branch` para cada grupo**, identific
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin main-branch-XX-cria-campo-de-busca`
+  * Usando o exemplo anterior: `git push -u origin main-group-XX-cria-campo-de-busca`
 
 6. Crie um novo `Pull Request` _(PR)_
   * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-frontend-online-store/pulls)
   * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a branch do grupo, `main-branch-XX`, e a sua branch **com atenção**
+  * Clique na caixa de seleção _"Compare"_ e escolha a branch do grupo, `main-group-XX`, e a sua branch **com atenção**
   * Coloque um título para a sua _Pull Request_
     * Exemplo: _"[GRUPO XX] Cria tela de busca"_
   * Clique no botão verde _"Create pull request"_
