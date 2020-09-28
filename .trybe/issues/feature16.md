@@ -1,3 +1,5 @@
-Criar um seletor dropdown que permite a lista de produtos ser ordenada por maior e menor preço.
+PRIORIDADE 5 - Adicionar ao site um layout agradável para quem usa ter uma boa experiência.
 
-- [Ordenação](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_ordering.png)
+**Observações técnicas**
+
+**Requisito 16.**

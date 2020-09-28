@@ -14,7 +14,7 @@ api.getProductsFromCategoryAndQuery.mockImplementation(
 );
 
 describe('Ver quais produtos tem frete grátis', () => {
-  it('should show free shipping information', async () => {
+  it('Exibe corretmente a informação de frete grátis dos produtos', async () => {
     render(<App />);
     await waitFor(() => expect(api.getCategories).toHaveBeenCalled());
     fireEvent.click(screen.getAllByTestId('category')[0]);

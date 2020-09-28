@@ -1,4 +1,7 @@
-Exibir o conteúdo do carrinho num slider na lateral da tela, de forma que ele possa ser exibido e escondido através da interação com botão.
+**PRIORIDADE 5** - Criar um seletor dropdown que permite a lista de produtos ser ordenada por maior e menor preço.
 
-- [Slider 1](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_slider.1.png)
-- [Slider 2](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_slider.1.png)
+- [Tela principal - Ordenação por preço](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_ordering.png)
+
+**Observações técnicas**
+
+**Requisito 18.**

@@ -2,7 +2,7 @@ import * as api from '../services/api';
 import mockedCategoriesResult from '../__mocks__/categories';
 
 describe('Implementar módulo de acesso à API do Mercado Livre', () => {
-  it('getCategories', () => {
+  it('Implementa a função `getCategories`', () => {
     const mockFetchPromise = Promise.resolve({
       json: () => Promise.resolve(mockedCategoriesResult),
     });
@@ -18,7 +18,7 @@ describe('Implementar módulo de acesso à API do Mercado Livre', () => {
     });
   });
 
-  it('getProductsFromCategoryAndQuery', () => {
+  it('Implementa a função `getProductsFromCategoryAndQuery`', () => {
     const categoryId = 'category1';
     const query = 'my-query';
     const successResponseBody = {};

@@ -1,4 +1,9 @@
-Adicionar indicador de frete grátis à exibição resumida e detalhada do produto.
+PRIORIDADE 4 - Adicionar quantidade disponível do produto (disponível via chamada da API na chave "available_quantity") e limitar a compra de acordo com a quantidade em estoque. Desabilite os botões de (+) daquele produto na aplicação ao se alcançar a quantidade máxima dele no estoque (veja os detalhes no card).
 
-- [Card 15.1](https://github.com/my-org/my-repo/tree/master/wireframes/card_15.1.png)
-- [Card 15.2](https://github.com/my-org/my-repo/tree/master/wireframes/card_15.2.png)
+**Observações técnicas**
+
+**Requisito 14.** Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
+
+**O que será avaliado:**
+
+  * Não adiciona ao carrinho mais produtos do que o disponível em estoque

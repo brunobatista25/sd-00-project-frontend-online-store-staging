@@ -14,7 +14,7 @@ api.getProductsFromCategoryAndQuery.mockImplementation(
 );
 
 describe('Adicionar produtos a partir da tela de listagem de produtos', () => {
-  it('should add product to shopping cart list', async () => {
+  it('Adiciona da tela de listagem um produto que aparece no carrinho', async () => {
     render(<App />);
     await waitFor(() => expect(api.getCategories).toHaveBeenCalled());
     fireEvent.click(screen.getAllByTestId('category')[0]);
