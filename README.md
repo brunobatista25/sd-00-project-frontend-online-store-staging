@@ -189,10 +189,13 @@ O retorno desse endpoint será algo no formato:
 O retorno desse endpoint será algo como o exemplo que temos [neste arquivo](exemplo-motorola.json).
 
 ### LISTA DE REQUISITOS
+---
 
-#### 1. Implementar módulo de acesso à API do Mercado Livre
+#### 1. IMPLEMENTAR MÓDULO DE ACESSO À API DO MERCADO LIVRE
 
 **PRIORIDADE 0** - Implemente um módulo que acessa a API do Mercado Livre
+
+**Observações técnicas**
 
 Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para acessar a API do Mercado Livre em sua aplicação.  Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições. Já deixamos 2 funções a serem implementadas para isso:
 
@@ -238,7 +241,7 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
   * Implementa a função `getCategories`.
   * Implementa a função `getProductsFromCategoryAndQuery`.
 
-#### 2. Criar página de listagem de produtos vazia
+#### 2. CRIAR PÁGINA DE LISTAGEM DE PRODUTOS VAZIA
 
 **PRIORIDADE 0** - Criar o campo de busca da tela principal, a listagem de produtos, inicialmente vazia. A listagem vazia deve conter a mensagem "Digite algum termo de pesquisa ou escolha uma categoria" (veja os detalhes do card).
 
@@ -257,7 +260,7 @@ A tela básica da plataforma é a tela de **listagem de produtos**, onde quem us
   * A raiz da aplicação, em `<App />`, renderiza com sucesso
   * A tela contém a mensagem pedida: 'Digite algum termo de pesquisa ou escolha uma categoria.'
 
-#### 3. Criar página do carrinho de compras
+#### 3. CRIAR PÁGINA DO CARRINHO DE COMPRAS
 
 **PRIORIDADE 1** - Criar o botão de carrinho de compras na tela principal, de listagem de produtos, e criar uma tela para o carrinho de compras, inicialmente vazio (veja os detalhes do card).
 
@@ -278,7 +281,7 @@ Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a
   * A home deve ter o botão do carrinho de compras
   * Clicar no botão deve levar à página do carrinho vazio, com a mensagem 'Seu carrinho está vazio' nela
 
-#### 4. Listar as categorias de produtos disponíveis via API na página principal
+#### 4. LISTAR AS CATEGORIAS DE PRODUTOS DISPONÍVEIS VIA API NA PÁGINA PRINCIPAL
 
 **PRIORIDADE 1** - Listar filtros de categoria obtidos da API na tela principal, de listagem do produto. A requisição da API para recuperar as categorias deve ser feita uma única vez após o carregamento da tela (veja os detalhes do card).
 
@@ -294,7 +297,7 @@ Um endpoint da API do Mercado Livre retorna as categorias de produto disponívei
 
   * Exibe as categorias retornadas pela API na página de listagem de produtos
 
-#### 5. Buscar por termos e receber uma listagem de produtos, com dados resumidos, associados a esses termos
+#### 5. BUSCAR POR TERMOS E RECEBER UMA LISTAGEM DE PRODUTOS, COM DADOS RESUMIDOS, ASSOCIADOS A ESSES TERMOS
 
 **PRIORIDADE 1** - Criar a listagem de produtos. Fazer a exibição resumida do produto (o "card" que aparece na listagem). A exibição deve ter título, foto e preço. Fazer requisição à API do Mercado Livre enviando os termos buscados por quem usa e usar o retorno para fazer a listagem dos produtos. Se a busca não retornar resultados, gerar a tela correspondente com o texto "Nenhum produto foi encontrado" (veja os detalhes no card).
 
@@ -313,7 +316,7 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
   * Exibe todos os produtos retornados pela API, dado um determinado filtro
 
-#### 6. Selecionar uma categoria e ver somente produtos daquela categoria
+#### 6. SELECIONAR UMA CATEGORIA E VER SOMENTE PRODUTOS DAQUELA CATEGORIA
 
 **PRIORIDADE 2** - Como pessoa usuária, eu quero clicar em uma categoria e ver a listagem de produtos ser filtrada de  acordo com os produtos daquela categoria (veja os detalhes no card).
 
@@ -325,7 +328,7 @@ A página, agora, deve poder usar as categorias recuperadas da API para filtrar 
 
   * Filtra corretamente os produtos de uma página para exibir somente os daquela categoria
 
-#### 7. Clicar na exibição resumida de um produto e ir para uma tela com sua exibição detalhada
+#### 7. CLICAR NA EXIBIÇÃO RESUMIDA DE UM PRODUTO E IR PARA UMA TELA COM SUA EXIBIÇÃO DETALHADA
 
 PRIORIDADE 2 - Como pessoa usuária, eu quero clicar no card do produto e visualizar a exibição detalhada do produto com nome do produto, imagem, preço e especificação técnica. A tela também deve possuir um botão que leve ao carrinho de compras (veja os detalhes no card).
 
@@ -342,7 +345,7 @@ A exibição detalhada de um produto será a página para exibir tudo o que se t
 
   * Clicar no card produto leva à página com seus detalhes
 
-#### 8. Adicionar produtos a partir da tela de listagem de produtos
+#### 8. ADICIONAR PRODUTOS A PARTIR DA TELA DE LISTAGEM DE PRODUTOS
 
 **PRIORIDADE 3** - Na tela de listagem de produtos, permitir adicionar o produto ao carrinho (veja os detalhes no card).
 
@@ -359,7 +362,7 @@ Configure uma forma de adicionar produtos ao carrinho de compras a partir da tel
 
   * Adiciona da tela de listagem um produto que aparece no carrinho
 
-#### 9. Adicionar um produto ao carrinho a partir de sua tela de exibição detalhada
+#### 9. ADICIONAR UM PRODUTO AO CARRINHO A PARTIR DE SUA TELA DE EXIBIÇÃO DETALHADA
 
 **PRIORIDADE 3** - Na tela de listagem de produtos, permitir adicionar o produto ao carrinho (veja os detalhes no card).
 
@@ -377,7 +380,7 @@ Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhad
 
   * Adiciona um produto ao carrinho da sua tela de detalhes
 
-#### 10. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
+#### 10. VISUALIZAR A LISTA DE PRODUTOS ADICIONADOS AO CARRINHO EM SUA PÁGINA E MANIPULAR SUA QUANTIDADE
 
 **PRIORIDADE 3** - Adicionar lista de produtos ao carrinho, com valor total ao final. Criar botões (-) e (+) para cada produto do carrinho, permitindo alterar a quantidade desejada de cada produto. A quantidade não pode ser negativa. Criar também botão (X) para remover produtos do carrinho e botão para finalizar a compra (veja os detalhes no card).
 
@@ -395,7 +398,7 @@ São operações básicas de carrinho a alteração da quantidade de um determin
 
   * Adiciona produtos ao carrinho e manipula suas quantidades
 
-#### 11. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
+#### 11. AVALIAR E COMENTAR ACERCA DE UM PRODUTO EM SUA TELA DE EXIBIÇÃO DETALHADA
 
 **PRIORIDADE 3** - Adicionar formulário ao produto, em sua exibição detalhada, para permitir adicionar avaliações com nota de 1 a 5 estrelas e comentários (o comentário deve ser opcional, sendo possível enviar apenas a nota). Exibir a lista de avaliações já feitas. Se quem usa sai e volta da tela, a nota e as avaliações não devem ser apagadas (veja os detalhes no card).
 
@@ -413,7 +416,7 @@ Avaliações positivas de um produto contribuem para boas vendas e nos dão insu
 
   * Avalia um produto na sua tela de detalhes
 
-#### 12. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
+#### 12. FINALIZAR COMPRA, VENDO UM RESUMO DELA, PREENCHENDO OS MEUS DADOS E ESCOLHENDO A FORMA DE PAGAMENTO
 
 **PRIORIDADE 4** - Implementar tela para a finalização da compra. A tela deve conter uma seção para revisão dos produtos com o valor total da compra, um formulário para ter as informações do comprador e um a seção para escolher o método de pagamento. Ao se clicar em "Comprar", deve-se validar que o formulário está preenchido e que a forma de pagamento foi escolhida e, em caso positivo, deve-se zerar o estado, redirecionar para a tela inicial (listagem de produtos). Caso algo não tenha sido preenchido, mantém-se na mesma tela com o dados sem apagar e destaca-se os campos não preenchidos em vermelho (veja os detalhes no card).
 
@@ -441,7 +444,7 @@ O último grande passo do fluxo do e-commerce é a finalização da compra por p
 
 ### BÔNUS:
 
-#### 13. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
+#### 13. VER JUNTO AO ÍCONE DO CARRINHO A QUANTIDADE DE PRODUTOS DENTRO DELE, EM TODAS AS TELAS EM QUE ELE APARECE
 
 **PRIORIDADE 4** - Adicionar ao ícone do carrinho, em todas as telas em que ele aparece, um número com a quantidade de produtos adicionados (veja os detalhes no card).
 
@@ -460,7 +463,7 @@ A partir de uma pesquisa com usuários e concorrentes, identificamos que existe 
   * Vê a quantidade de produtos no carrinho da tela de listagem
   * Vê a quantidade de produtos no carrinho da tela de detalhes
 
-#### 14. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
+#### 14. A QUANTIDADE DE PRODUTOS ADICIONADOS AO CARRINHO DEVE SER LIMITADA PELA QUANTIDADE DISPONÍVEL EM ESTOQUE
 
 **PRIORIDADE 4** - Adicionar quantidade disponível do produto (disponível via chamada da API na chave "available_quantity") e limitar a compra de acordo com a quantidade em estoque. Desabilite os botões de (+) daquele produto na aplicação ao se alcançar a quantidade máxima dele no estoque (veja os detalhes no card).
 
@@ -472,7 +475,7 @@ Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adi
 
   * Não adiciona ao carrinho mais produtos do que o disponível em estoque
 
-#### 15. Ver quais produtos tem frete grátis
+#### 15. VER QUAIS PRODUTOS TEM FRETE GRÁTIS
 
 **PRIORIDADE 4** - Adicionar indicador de frete grátis à exibição resumida e detalhada do produto (veja os detalhes no card).
 
@@ -492,38 +495,38 @@ As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns pro
 
 ### EXTRAS (NÃO AVALIATIVOS):
 
-#### 16. Faça um layout para o site
+#### 16. FAÇA UM LAYOUT PARA O SITE
 
 **PRIORIDADE 5** - Adicionar ao site um layout agradável para quem usa ter uma boa experiência.
 
-#### 17. Faça um layout responsivo para o site
+#### 17. FAÇA UM LAYOUT RESPONSIVO PARA O SITE
 
 **PRIORIDADE 5** - Faça um layout responsivo completo, para telas pequenas.
 
-#### 18. Crie um seletor dropdown para ordenar a lista de produto por maior e menor preço
+#### 18. CRIE UM SELETOR DROPDOWN PARA ORDENAR A LISTA DE PRODUTO POR MAIOR E MENOR PREÇO
 
 **PRIORIDADE 5** - Criar um seletor dropdown que permite a lista de produtos ser ordenada por maior e menor preço.
 
 - [Tela principal - Ordenação por preço](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_ordering.png)
 
-#### 19. Coloque uma animação no carrinho para quando um produto for adicionado
+#### 19. COLOQUE UMA ANIMAÇÃO NO CARRINHO PARA QUANDO UM PRODUTO FOR ADICIONADO
 
 **PRIORIDADE 5** - Coloque uma animação no carrinho quando adicionar/remover um produto.
 
-#### 20. Crie um slider lateral para exibir o carrinho na tela principal
+#### 20. CRIE UM SLIDER LATERAL PARA EXIBIR O CARRINHO NA TELA PRINCIPAL
 
 **PRIORIDADE 5** - Exibir o conteúdo do carrinho num slider na lateral da tela, de forma que ele possa ser exibido e escondido através da interação com botão (veja os detalhes no card).
 
 - [Tela - Listagem com carrinho populado.png](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_slider.1.png)
 - [Tela - Listagem com carrinho vazio.png](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_slider.1.png)
 
-#### 21. Destaque, na tela principal, os produtos já adicionados ao carrinho
+#### 21. DESTAQUE, NA TELA PRINCIPAL, OS PRODUTOS JÁ ADICIONADOS AO CARRINHO
 
 **PRIORIDADE 5** - Destacar produtos que já foram adicionados ao carrinho, diferenciando-o dos demais produtos da lista da página principal (veja os detalhes no card).
 
 - [Tela - Listagem com destaque.png](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_marked_product.png)
 
-#### 22. Crie um slider lateral para exibir o carrinho na tela principal
+#### 22. CRIE UM SLIDER LATERAL PARA EXIBIR O CARRINHO NA TELA PRINCIPAL
 
 **PRIORIDADE 5** - Da tela de detalhamento de produto, permitir alterar a quantidade daquele produto no carrinho, se ele estiver lá, com botões (-) e (+). A quantidade não pode ser negativa (veja detalhes no card).
 
