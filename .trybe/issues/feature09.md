@@ -1,4 +1,13 @@
-Adicionar formulário ao produto, em sua exibição detalhada, para permitir adicionar avaliações com nota de 1 a 5 estrelas e comentários (o comentário deve ser opcional, sendo possível enviar apenas a nota). Exibir a lista de avaliações já feitas. Se quem usa sai e volta da tela, a nota e as avaliações não devem ser apagadas.
+PRIORIDADE 3 - Na tela de listagem de produtos, permitir adicionar o produto ao carrinho (veja os detalhes no card).
 
-- [Card 11.1](https://github.com/my-org/my-repo/tree/master/wireframes/card_11.1.png)
-- [Card 11.2](https://github.com/my-org/my-repo/tree/master/wireframes/card_11.2.png)
+**Observações técnicas**
+
+**Requisito 9.** Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
+
+  * Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+
+**O que será avaliado:**
+
+  * Adiciona um produto ao carrinho da sua tela de detalhes

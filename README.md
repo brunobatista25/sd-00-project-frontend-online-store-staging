@@ -98,14 +98,14 @@ npm run lint
 
 Os requisitos são organizados por grupos de prioridade. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
 
-- **Requisito 1:** Prioride 0 (Deve ser feito PRIMEIRO)
-- **Requisitos 2 a 4:** Prioride 1 (Devem ser feitos APÓS O REQUISITO 1, mas podem ser feitos em paralelo)
-- **Requisitos 5 e 6:** Prioride 2 (Devem ser feitos APÓS OS REQUISITO 2 A 5, mas podem ser feitos em paralelo)
+- **Requisitos 1 e 2:** Prioridade 0 (Deve ser feito PRIMEIRO)
+- **Requisitos 3 a 5:** Prioridade 1 (Devem ser feitos APÓS OS REQUISITO 1 E 2, mas podem ser feitos em paralelo)
+- **Requisitos 5 a 7:** Prioridade 2 (Devem ser feitos APÓS OS REQUISITO 3 A 5, mas podem ser feitos em paralelo)
 ...
 
 Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, necessáriamente, do avanço de outra para poder acontecer.
 
-### Bônus
+### Requisitos Bônus
 
 No grupo de **Prioridade 4** há um requisito obrigatório, o requisito 12, e os requisitos 13 a 15, que são bônus. Além deles, temos um conjunto de cards menos prioritários (**Prioridade 5**) que não são contemplados pelo avaliador automático mas são funcionalidades que acrescentarão muito ao trabalho quando este for apresentado em um portfólio.
 
@@ -192,6 +192,8 @@ O retorno desse endpoint será algo como o exemplo que temos [neste arquivo](exe
 
 #### 1. Implementar módulo de acesso à API do Mercado Livre
 
+**PRIORIDADE 0** - Implemente um módulo que acessa a API do Mercado Livre
+
 Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para acessar a API do Mercado Livre em sua aplicação.  Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições. Já deixamos 2 funções a serem implementadas para isso:
 
 ```javascript
@@ -240,6 +242,8 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
 
 **PRIORIDADE 0** - Criar o campo de busca da tela principal, a listagem de produtos, inicialmente vazia. A listagem vazia deve conter a mensagem "Digite algum termo de pesquisa ou escolha uma categoria" (veja os detalhes do card).
 
+- [Tela principal - Antes da busca](https://github.com/my-org/my-repo/tree/master/wireframes/card_02.png)
+
 **Observações técnicas**
 
 A tela básica da plataforma é a tela de **listagem de produtos**, onde quem usa buscará o que quer para adicionar ao carrinho e filtrará suas buscas.
@@ -255,6 +259,13 @@ A tela básica da plataforma é a tela de **listagem de produtos**, onde quem us
 
 #### 3. Criar página do carrinho de compras
 
+**PRIORIDADE 1** - Criar o botão de carrinho de compras na tela principal, de listagem de produtos, e criar uma tela para o carrinho de compras, inicialmente vazio (veja os detalhes do card).
+
+- [Tela do carrinho de compras](https://github.com/my-org/my-repo/tree/master/wireframes/card_03.png)
+- [Tela principal - Com botão do carrinho de compras](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_shopping_cart_button.png)
+
+**Observações técnicas**
+
 Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a compra. A listagem de produtos deve ter um ícone de carrinho que, ao ser clicado, leva à página do carrinho. Inicialmente, o carrinho deverá estar vazio.
 
   * O elemento com o ícone de carrinho de compras deve ficar visível na página inicial (listagem de produtos) e também na página de detalhes de um produto (descrita posteriormente)
@@ -269,6 +280,12 @@ Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a
 
 #### 4. Listar as categorias de produtos disponíveis via API na página principal
 
+**PRIORIDADE 1** - Listar filtros de categoria obtidos da API na tela principal, de listagem do produto. A requisição da API para recuperar as categorias deve ser feita uma única vez após o carregamento da tela (veja os detalhes do card).
+
+- [Tela principal - Com a lista de categorias](https://github.com/my-org/my-repo/tree/master/wireframes/card_04.png)
+
+**Observações técnicas**
+
 Um endpoint da API do Mercado Livre retorna as categorias de produto disponíveis para busca. Em momento posterior tais categorias serão usadas para filtrar a listagem de produtos. Por hora, elas devem ser listadas na tela da listagem, conforme protótipo.
 
   * Adicione o atributo `data-testid` com o valor `category` nos elementos que possuem os nomes das categorias
@@ -278,6 +295,13 @@ Um endpoint da API do Mercado Livre retorna as categorias de produto disponívei
   * Exibe as categorias retornadas pela API na página de listagem de produtos
 
 #### 5. Buscar por termos e receber uma listagem de produtos, com dados resumidos, associados a esses termos
+
+**PRIORIDADE 1** - Criar a listagem de produtos. Fazer a exibição resumida do produto (o "card" que aparece na listagem). A exibição deve ter título, foto e preço. Fazer requisição à API do Mercado Livre enviando os termos buscados por quem usa e usar o retorno para fazer a listagem dos produtos. Se a busca não retornar resultados, gerar a tela correspondente com o texto "Nenhum produto foi encontrado" (veja os detalhes no card).
+
+- [Tela principal - Após a busca](https://github.com/my-org/my-repo/tree/master/wireframes/card_05.1.png)
+- [Tela principal - Nenhum produto encontrado](https://github.com/my-org/my-repo/tree/master/wireframes/card_05.2.png)
+
+**Observações técnicas**
 
 A alma do site é a sua lógica de busca e listagem de produtos. Após digitar seus termos na caixa de busca uma requisição deverá ser feita à API do Mercado Livre utilizando a ação de um botão, tendo como parâmetros a frase digitada, e tais produtos deverão aparecer na tela numa exibição resumida, conforme protótipo anexo.
 
@@ -291,7 +315,11 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 6. Selecionar uma categoria e ver somente produtos daquela categoria
 
-  A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
+**PRIORIDADE 2** - Como pessoa usuária, eu quero clicar em uma categoria e ver a listagem de produtos ser filtrada de  acordo com os produtos daquela categoria (veja os detalhes no card).
+
+**Observações técnicas**
+
+A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
 
 **O que será avaliado:**
 
@@ -299,7 +327,13 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 7. Clicar na exibição resumida de um produto e ir para uma tela com sua exibição detalhada
 
-  A exibição detalhada de um produto será a página para exibir tudo o que se tem acerca de um produto específico.
+PRIORIDADE 2 - Como pessoa usuária, eu quero clicar no card do produto e visualizar a exibição detalhada do produto com nome do produto, imagem, preço e especificação técnica. A tela também deve possuir um botão que leve ao carrinho de compras (veja os detalhes no card).
+
+- [Tela - Detalhamento do produto](https://github.com/my-org/my-repo/tree/master/wireframes/card_07.png)
+
+**Observações técnicas**
+
+A exibição detalhada de um produto será a página para exibir tudo o que se tem acerca de um produto específico.
 
   * Adicione o atributo `data-testid` com o valor `product-detail-link` no elemento que ao ser clicado, enviará a pessoa que usa a aplicação para a página de detalhes do produto. Você deve adicionar esse atributo para todos os produtos.
   * Adicione o atributo `data-testid` com o valor `product-detail-name` no elemento que possui o nome do produto na tela de detalhes.
@@ -310,7 +344,11 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 8. Adicionar produtos a partir da tela de listagem de produtos
 
-  Configure uma forma de adicionar produtos ao carrinho de compras a partir da tela de listagem de produtos.
+**PRIORIDADE 3** - Na tela de listagem de produtos, permitir adicionar o produto ao carrinho (veja os detalhes no card).
+
+**Observações técnicas**
+
+Configure uma forma de adicionar produtos ao carrinho de compras a partir da tela de listagem de produtos.
 
   * Adicione o atributo `data-testid` com o valor `product-add-to-cart` nos elementos que executam a ação de adicionar os produtos ao carrinho de compras.
   * Desenvolva algo da forma simples: um elemento adiciona um produto.
@@ -323,9 +361,17 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 9. Adicionar um produto ao carrinho a partir de sua tela de exibição detalhada
 
-  Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
+**PRIORIDADE 3** - Na tela de listagem de produtos, permitir adicionar o produto ao carrinho (veja os detalhes no card).
+
+- [Tela principal - Adicionar ao carrinho na exibição detalhad](https://github.com/my-org/my-repo/tree/master/wireframes/card_13.png)
+
+**Observações técnicas**
+
+Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
 
   * Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
 
 **O que será avaliado:**
 
@@ -333,7 +379,13 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 10. Visualizar a lista de produtos adicionados ao carrinho em sua página e manipular sua quantidade
 
-  São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
+**PRIORIDADE 3** - Adicionar lista de produtos ao carrinho, com valor total ao final. Criar botões (-) e (+) para cada produto do carrinho, permitindo alterar a quantidade desejada de cada produto. A quantidade não pode ser negativa. Criar também botão (X) para remover produtos do carrinho e botão para finalizar a compra (veja os detalhes no card).
+
+- [Tela - Carrinho de compras com quantidades](https://github.com/my-org/my-repo/tree/master/wireframes/card_10.png)
+
+**Observações técnicas**
+
+São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
 
   * Adicione elementos na página do carrinho de compras para aumentar ou diminuir a quantidade de cada produto presente no carrinho.
   * Adicione o atributo `data-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
@@ -345,19 +397,31 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 11. Avaliar e comentar acerca de um produto em sua tela de exibição detalhada
 
-  Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
+**PRIORIDADE 3** - Adicionar formulário ao produto, em sua exibição detalhada, para permitir adicionar avaliações com nota de 1 a 5 estrelas e comentários (o comentário deve ser opcional, sendo possível enviar apenas a nota). Exibir a lista de avaliações já feitas. Se quem usa sai e volta da tela, a nota e as avaliações não devem ser apagadas (veja os detalhes no card).
+
+- [Tela - Detalhamento do produto com avaliações](https://github.com/my-org/my-repo/tree/master/wireframes/card_11.1.png)
+- [Tela - Detalhamento do produto com avaliações pregressas](https://github.com/my-org/my-repo/tree/master/wireframes/card_11.2.png)
+
+**Observações técnicas**
+
+Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
 
   * Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
   * Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
-  * (**Não avaliativo**) Você pode criar um botão que simule a submissão dessa avaliação, na verdade, esse botão não precisa realizar nenhuma função específica, pode por exemplo, limpar o campo com o texto da avaliação.
 
 **O que será avaliado:**
 
-  * Avalia e comenta um produto na sua tela de detalhes
+  * Avalia um produto na sua tela de detalhes
 
 #### 12. Finalizar compra, vendo um resumo dela, preenchendo os meus dados e escolhendo a forma de pagamento
 
-  O último grande passo do fluxo do e-commerce é a finalização da compra por parte de quem usa.
+**PRIORIDADE 4** - Implementar tela para a finalização da compra. A tela deve conter uma seção para revisão dos produtos com o valor total da compra, um formulário para ter as informações do comprador e um a seção para escolher o método de pagamento. Ao se clicar em "Comprar", deve-se validar que o formulário está preenchido e que a forma de pagamento foi escolhida e, em caso positivo, deve-se zerar o estado, redirecionar para a tela inicial (listagem de produtos). Caso algo não tenha sido preenchido, mantém-se na mesma tela com o dados sem apagar e destaca-se os campos não preenchidos em vermelho (veja os detalhes no card).
+
+- [Tela - Finalização de compra](https://github.com/my-org/my-repo/tree/master/wireframes/card_12.png)
+
+**Observações técnicas**
+
+O último grande passo do fluxo do e-commerce é a finalização da compra por parte de quem usa.
 
   * Adicione um botão para finalizar a compra. Este botão ao ser clicado, deve enviar os dados referente à lista para uma página de "_checkout_".
   * Adicione o atributo `data-testid` com o valor `checkout-products` no botão que leva a pessoa à página de "_checkout_".
@@ -379,7 +443,13 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 13. Ver junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
 
-  A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
+**PRIORIDADE 4** - Adicionar ao ícone do carrinho, em todas as telas em que ele aparece, um número com a quantidade de produtos adicionados (veja os detalhes no card).
+
+- [Tela - Listagem de produtos com carrinho e quantidade](https://github.com/my-org/my-repo/tree/master/wireframes/card_13.png)
+
+**Observações técnicas**
+
+A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
 
   * Adicione o atributo `data-testid` com o valor `shopping-cart-size` no elemento que contém a quantidade de produtos presente na lista.
   * A quantidade a ser exibida é o número total de itens, ou seja, se a pessoa adiciona o produto1 5 vezes e o produto2 2 vezes, o valor a ser exibido é 7.
@@ -392,7 +462,11 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 14. A quantidade de produtos adicionados ao carrinho deve ser limitada pela quantidade disponível em estoque
 
-  Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
+**PRIORIDADE 4** - Adicionar quantidade disponível do produto (disponível via chamada da API na chave "available_quantity") e limitar a compra de acordo com a quantidade em estoque. Desabilite os botões de (+) daquele produto na aplicação ao se alcançar a quantidade máxima dele no estoque (veja os detalhes no card).
+
+**Observações técnicas**
+
+Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
 
 **O que será avaliado:**
 
@@ -400,7 +474,14 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 
 #### 15. Ver quais produtos tem frete grátis
 
-  As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns produtos. Devemos incorporar isso ao e-commerce.
+**PRIORIDADE 4** - Adicionar indicador de frete grátis à exibição resumida e detalhada do produto (veja os detalhes no card).
+
+- [Tela principal - Exibição detalhada de produto com frete gratis](https://github.com/my-org/my-repo/tree/master/wireframes/card_15.1.png)
+- [Tela - Detalhamento de produto com frete gratis](https://github.com/my-org/my-repo/tree/master/wireframes/card_15.2.png)
+
+**Observações técnicas**
+
+As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns produtos. Devemos incorporar isso ao e-commerce.
 
   * Adicione um elemento que mostre essa informação para cada produto que possua frete grátis na tela de listagem.
   * Adicione o atributo `data-testid` com o valor `free-shipping` em elementos que apresentem essa informação para todos os produtos que possuam frete grátis.
@@ -408,6 +489,45 @@ A alma do site é a sua lógica de busca e listagem de produtos. Após digitar s
 **O que será avaliado:**
 
   * Exibe corretmente a informação de frete grátis dos produtos
+
+### EXTRAS (NÃO AVALIATIVOS):
+
+#### 16. Faça um layout para o site
+
+**PRIORIDADE 5** - Adicionar ao site um layout agradável para quem usa ter uma boa experiência.
+
+#### 17. Faça um layout responsivo para o site
+
+**PRIORIDADE 5** - Faça um layout responsivo completo, para telas pequenas.
+
+#### 18. Crie um seletor dropdown para ordenar a lista de produto por maior e menor preço
+
+**PRIORIDADE 5** - Criar um seletor dropdown que permite a lista de produtos ser ordenada por maior e menor preço.
+
+- [Tela principal - Ordenação por preço](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_ordering.png)
+
+#### 19. Coloque uma animação no carrinho para quando um produto for adicionado
+
+**PRIORIDADE 5** - Coloque uma animação no carrinho quando adicionar/remover um produto.
+
+#### 20. Crie um slider lateral para exibir o carrinho na tela principal
+
+**PRIORIDADE 5** - Exibir o conteúdo do carrinho num slider na lateral da tela, de forma que ele possa ser exibido e escondido através da interação com botão (veja os detalhes no card).
+
+- [Tela - Listagem com carrinho populado.png](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_slider.1.png)
+- [Tela - Listagem com carrinho vazio.png](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_slider.1.png)
+
+#### 21. Destaque, na tela principal, os produtos já adicionados ao carrinho
+
+**PRIORIDADE 5** - Destacar produtos que já foram adicionados ao carrinho, diferenciando-o dos demais produtos da lista da página principal (veja os detalhes no card).
+
+- [Tela - Listagem com destaque.png](https://github.com/my-org/my-repo/tree/master/wireframes/bonus_marked_product.png)
+
+#### 22. Crie um slider lateral para exibir o carrinho na tela principal
+
+**PRIORIDADE 5** - Da tela de detalhamento de produto, permitir alterar a quantidade daquele produto no carrinho, se ele estiver lá, com botões (-) e (+). A quantidade não pode ser negativa (veja detalhes no card).
+
+- [Tela - Detalhamento do produto com quantidade.png](https://github.com/my-org/my-repo/tree/master/wireframes/card_09.png)
 
 ---
 

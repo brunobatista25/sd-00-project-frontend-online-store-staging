@@ -1,4 +1,9 @@
-Criar a listagem de produtos. Fazer a exibição resumida do produto (o "card" que aparece na listagem). A exibição deve ter título, foto e preço. Fazer requisição à API do Mercado Livre enviando os termos buscados por quem usa e usar o retorno para fazer a listagem dos produtos. Se a busca não retornar resultados, gerar a tela correspondente com o texto "Nenhum produto foi encontrado".
+PRIORIDADE 2 - Como pessoa usuária, eu quero clicar em uma categoria e ver a listagem de produtos ser filtrada de acordo com os produtos daquela categoria (veja os detalhes no card).
 
-- [Card 05.1](https://github.com/my-org/my-repo/tree/master/wireframes/card_05.1.png)
-- [Card 05.2](https://github.com/my-org/my-repo/tree/master/wireframes/card_05.2.png)
+**Observações técnicas**
+
+**Requisito 6.** A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
+
+**O que será avaliado:**
+
+  * Filtra corretamente os produtos de uma página para exibir somente os daquela categoria

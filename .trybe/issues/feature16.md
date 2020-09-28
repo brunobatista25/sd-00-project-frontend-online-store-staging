@@ -1,4 +1,5 @@
-Adicionar indicador de frete grátis à exibição resumida e detalhada do produto.
+PRIORIDADE 5 - Adicionar ao site um layout agradável para quem usa ter uma boa experiência.
 
-- [Card 15.1](https://github.com/my-org/my-repo/tree/master/wireframes/card_15.1.png)
-- [Card 15.2](https://github.com/my-org/my-repo/tree/master/wireframes/card_15.2.png)
+**Observações técnicas**
+
+**Requisito 16.**
