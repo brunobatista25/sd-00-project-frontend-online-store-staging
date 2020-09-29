@@ -50,6 +50,7 @@
     "object-curly-newline": ["off"],
 
     "import/no-extraneous-dependencies": ["off"],
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
     "react/default-props-match-prop-types": [
       "error",
       {"allowRequiredDefaults": false}
@@ -62,6 +63,7 @@
     "react/no-did-update-set-state": ["error"],
     "react/jsx-props-no-spreading": ["off"],
     "react/no-multi-comp": ["error", {"ignoreStateless": false}],
+    "react/prefer-stateless-function": ["off"],
     "react/no-access-state-in-setstate": ["error"],
     "react/no-redundant-should-component-update": ["error"],
     "react/no-this-in-sfc": ["error"],
