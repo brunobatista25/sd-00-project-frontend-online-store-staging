@@ -3,8 +3,8 @@ import React from 'react';
 function Comp() {
   return (
     <div className="App">
-      Vou quebrar
-      </div>
+      Vou funcionar
+    </div>
   );
 }
 
